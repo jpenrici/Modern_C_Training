@@ -1,5 +1,4 @@
 #include "charHandler.h"
-#include "include/charHandler.h"
 
 #include <stdio.h>
 #include <stdlib.h>
