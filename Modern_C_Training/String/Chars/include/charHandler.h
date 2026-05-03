@@ -21,6 +21,11 @@ typedef struct {
  */
 StrObj* Str_New(size_t initial_cap);
 
+/**
+ * Allocates a StrObj object in the HEAP and initializes it with a string.
+ */
+StrObj* Str_Create(const char* string);
+
 // --- STACK/REF INITIALIZERS ---
 
 /**
@@ -79,3 +84,27 @@ void Str_TrimRight(StrObj* self);
  * Returns a new Heap-allocated StrObj containing a portion of the original.
  */
 StrObj* Str_Substring(const StrObj* self, size_t start, size_t count);
+
+/**
+ * Creates a complete deep copy of the string on the Heap.
+ * Reuses Substring logic: from index 0 to the full length.
+ */
+StrObj* Str_Copy(const StrObj* self);
+
+/**
+ * Formats a string into the StrObj buffer using printf-style tokens.
+ * It automatically handles memory expansion.
+ */
+bool Str_Format(StrObj* self, const char* format, ...);
+
+/**
+ * Splits a string into an array of StrObj pointers based on a delimiter.
+ * The resulting array is NULL-terminated for easy iteration.
+ * Returns: StrObj** (an array of pointers)
+ */
+StrObj** Str_Split(const StrObj* self, char delimiter, size_t* out_count);
+
+/**
+ * Table Visualizer
+ */
+void Str_Show(const StrObj* str);

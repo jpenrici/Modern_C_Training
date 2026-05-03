@@ -48,7 +48,7 @@ static int g_failed = 0;
     do {                                                                    \
         printf("  %-45s", #fn);                                             \
         if (fn()) { printf("ok\n"); g_passed++; }                           \
-        else       {                              g_failed++; }             \
+        else      { g_failed++; }                                           \
     } while (0)
 
 /* -------------------------------------------------------------------------
