@@ -1,5 +1,4 @@
 #include "matrix.h"
-#include <stdlib.h>
 
 Matrix* matrix_create(size_t depth, size_t rows, size_t cols)
 {
@@ -36,12 +35,12 @@ bool matrix_scale(Matrix* matrix, double scalar)
     return true;
 }
 
-static size_t matrix_capacity(const Matrix* matrix)
+STATIC size_t matrix_capacity(const Matrix* matrix)
 {
     return matrix->depth * matrix->rows * matrix->cols;
 }
 
-static size_t matrix_get_index(const Matrix* matrix, size_t z, size_t y, size_t x)
+STATIC size_t matrix_get_index(const Matrix* matrix, size_t z, size_t y, size_t x)
 {
     return (z * matrix->rows * matrix->cols) + (y * matrix->cols) + x;
 }
@@ -56,7 +55,7 @@ bool matrix_set(Matrix* matrix, size_t z, size_t y, size_t x, double value)
         return false;
 
     size_t index = matrix_get_index(matrix, z, y, x);
-    if (index == 0 || index > capacity)
+    if (index > capacity)
         return false;
 
     matrix->data[index] = value;
