@@ -60,6 +60,21 @@ int main(void)
     array_d2[2] = (type_alias_D) { .a = 102 };
     free(array_d2);
 
+    struct E {
+        int a;
+        int b;
+    };
+
+    struct E e1;
+    e1.a = 10;
+
+    typedef struct {
+        int a;
+        int b;
+    } type_alias_F;
+
+    type_alias_F f1 = { .a = 10, .b = 20 };
+
     printf("Compiled without alerts!\n");
 
     return 0;
