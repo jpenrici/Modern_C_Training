@@ -1,0 +1,8 @@
+The quick brown fox jumps over the lazy dog.
+A fox is a clever animal and the dog is a loyal animal.
+Perl is a powerful language for text processing and string manipulation.
+C is a fast and efficient language for systems programming.
+Together, Perl and C make a powerful combination for text analysis.
+The fox and the dog became friends in the end.
+Text processing with Perl embedded in C is elegant and efficient.
+Every word in this file will be counted by our word counter.
